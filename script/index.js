@@ -1,76 +1,79 @@
-let container = document.getElementById("container");
+let cardContainer = document.getElementById("cardContainer");
+let featuredPosts = [
+  {
+    id: "1",
+    title: "Cap",
+    imageUrl: "https://i.postimg.cc/d1Z43DCN/hat-7.png ",
+    description: "R100",
+    content: " ",
+    date: new Date(),
+  },
 
-let cardData = [
   {
-    imgSrc: "",
-    cardTitle: "",
-    cardPrice: ""
+    id: "2",
+    title: "Hat",
+    imageUrl: " https://i.postimg.cc/0ytfC7dH/hat2.png",
+    description: "R150",
+    content: " ",
+    date: new Date(),
   },
   {
-    imgSrc: "",
-    cardTitle: "",
-    cardPrice: ""
+    id: "3",
+    title: "Hat ",
+    imageUrl: "https://i.postimg.cc/t4DrmKyk/hat4.png ",
+    description: "R175",
+    content: " ",
+    date: new Date(),
   },
   {
-    imgSrc: "",
-    cardTitle: "",
-    cardPrice: ""
+    id: "4",
+    title: "Hat",
+    imageUrl: "https://i.postimg.cc/Xvzsn9ry/hat5.png",
+    description: "R200",
+    content: " ",
+    date: new Date(),
   },
   {
-    imgSrc: "",
-    cardTitle: "",
-    cardPrice: ""
+    id: "5",
+    title: "Hat",
+    imageUrl: "https://i.postimg.cc/L4fxMY2n/hat6.png",
+    description: "R199,99",
+    content: " ",
+    date: new Date(),
   },
   {
-    imgSrc: "",
-    cardTitle: "",
-    cardPrice: ""
+    id: "6",
+    title: "Cap",
+    imageUrl: " https://i.postimg.cc/Hs93VqJm/hats3.png",
+    description: "R149,99",
+    content: " ",
+    date: new Date(),
   },
-  {
-    imgSrc: "",
-    cardTitle: "",
-    cardPrice: ""
-  }
 ];
 
-for (let i = 0; i < cardData.length; i++) {
+for (let i = 0; i < featuredPosts.length; i++) {
+  let post = featuredPosts[i];
+  let col = document.createElement("div");
+  col.className = "col-2";
   let card = document.createElement("div");
   card.className = "card";
-  card.style.width = "18rem";
-
-  let cardImg = document.createElement("img");
-  cardImg.src = cardData[i].imgSrc;
-  cardImg.className = "card-img-top";
-  cardImg.alt = "Card image";
-
-  let cardBody = document.createElement("div");
-  cardBody.className = "card-body";
-
-  let cardTitle = document.createElement("h5");
-  cardTitle.className = "card-title";
-  cardTitle.textContent = cardData[i].cardTitle;
-  cardBody.appendChild(cardTitle);
-
-  let cardTPrice = document.createElement("p");
-  cardPrice.className = "card-price";
-  cardPrice.textContent = cardData[i].cardPrice;
-  cardBody.appendChild(cardPrice);
-
-  let addToCartBtn = document.createElement("a");
-  addToCartBtn.href = "#";
-  addToCartBtn.className = "btn btn-primary";
-  addToCartBtn.textContent = "Add to Cart";
-  cardBody.appendChild(addToCartBtn);
-
-  let deleteBtn = document.createElement("a");
-  deleteBtn.href = "#";
-  deleteBtn.className = "btn btn-primary";
-  deleteBtn.textContent = "Delete";
-  cardBody.appendChild(deleteBtn);
-
-  card.appendChild(cardImg);
-  card.appendChild(cardBody);
-  container.appendChild(card);
+  let image = document.createElement("img");
+  image.src = post.imageUrl;
+  card.appendChild(image);
+  let price = document.createElement("p")
+  price.innerHTML = post.description;
+  card.appendChild(price)
+  let addToCartButton = document.createElement("button");
+  addToCartButton.textContent = "Add to Cart";
+  addToCartButton.addEventListener("click", () => {
+    console.log(`Added post with ID ${post.id} to cart.`);
+  });
+  card.appendChild(addToCartButton);
+  cardContainer.appendChild(card);
+}
+function goToProductsPage() {
+  window.location.href = "products.html";
 }
 
-  
+
+
