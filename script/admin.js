@@ -20,7 +20,7 @@ function addProduct() {
     productContent.value &&
     image.value
   ) {
-    const product = {
+    let product = {
       id: itemId,
       title: productTitle.value,
       image: image.value,
@@ -72,7 +72,7 @@ function displayProducts() {
 }
 
 function attachEventListeners() {
-  const deleteButtons = document.querySelectorAll(".btn-delete");
+  let deleteButtons = document.querySelectorAll(".btn-delete");
   deleteButtons.forEach((button) => {
     button.addEventListener("click", () => {
       const productId = parseInt(button.dataset.id);
@@ -80,7 +80,7 @@ function attachEventListeners() {
     });
   });
 
-  const editButtons = document.querySelectorAll(".btn-edit");
+  let editButtons = document.querySelectorAll(".btn-edit");
   editButtons.forEach((button) => {
     button.addEventListener("click", () => {
       const productId = parseInt(button.dataset.id);
@@ -89,16 +89,16 @@ function attachEventListeners() {
   });
 }
 
-// Delete Product
+
 function deleteProduct(productId) {
   productData = productData.filter((item) => item.id !== productId);
   localStorage.setItem("product-list", JSON.stringify(productData));
   displayProducts();
 }
 
-// Edit Product (Update form with existing data)
+
 function editProduct(productId) {
-  const product = productData.find((item) => item.id === productId);
+  let product = productData.find((item) => item.id === productId);
   if (product) {
     productTitle.value = product.title;
     productDescription.value = product.description;
@@ -107,5 +107,5 @@ function editProduct(productId) {
   }
 }
 
-// Initial display
+
 displayProducts();
