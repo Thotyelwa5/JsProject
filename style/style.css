@@ -4,3 +4,203 @@
     height: 40rem;
     background-repeat: no-repeat;
 }
+.navbar:hover{
+  background-color: white;
+}
+/* FeaturedPosts */
+.card {
+    border: 1px solid #827d7d;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    width: 18rem; 
+  }
+  
+  .card img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+  }
+  
+  .card button {
+    display: block;
+    margin-top: 10px;
+    background-color: #424b4b;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 12px;
+    cursor: pointer;
+  }
+  
+  .card button:hover {
+    background-color: #00eeff;
+  }
+  
+  #cardContainer {
+    /* max-width: 600px; */
+    max-width: 70%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.row{
+    width: 100% !important;
+}
+
+#cardContainer img{
+    width: 100%;
+    height: 100%;
+}
+  /* Admin Table */
+#title-name,
+#description,
+#content,
+#image-url {
+  margin-bottom: 10px;
+  padding: 5px;
+  width: 300px;
+}
+
+.btn-add {
+  padding: 10px 20px;
+  background-color: #424b4b;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+#tbl-admin {
+  margin-top: 20px;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#tbl-admin th,
+#tbl-admin td {
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+#tbl-admin th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+  text-align: left;
+}
+
+#tbl-admin img {
+  max-width: 70px;
+}
+
+
+.btn-edit,
+.btn-delete {
+  padding: 5px 10px;
+  background-color: #424b4b;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-right: 5px;
+  width: 5rem;
+}
+
+.btn-edit:hover,
+.btn-delete:hover,
+.btn-add:hover {
+  background-color: #00eeff;
+}
+
+
+.hiiiii{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+td{
+    text-align: center;
+}
+
+@media screen and (max-width: 600px) {
+  #tbl-admin {
+    width: 100%;
+  }
+
+  #tbl-admin th,
+  #tbl-admin td,
+  #tbl-admin tr,
+  #tbl-admin tbody,
+  #tbl-admin thead {
+    display: block;
+  }
+
+  #tbl-admin thead tr {
+    position: absolute;
+    top: 100px;
+    left: 100px;
+  }
+
+  #tbl-admin tr {
+    border: 1px solid #ccc;
+  }
+
+  #tbl-admin td {
+    border: none;
+    border-bottom: 1px solid #ddd;
+    position: relative;
+    padding-left: 50%;
+  }
+
+  #tbl-admin td::before {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+    font-weight: bold;
+  }
+
+
+  #tbl-admin td:last-child {
+    display: none;
+  }
+}
+/* footer */
+.footer {
+  background-color: #f8f8f8;
+  padding: 20px;
+}
+
+.social-icons {
+  margin-bottom: 10px;
+}
+
+.social-icons a {
+  display: inline-block;
+  margin-right: 10px;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #007bff;
+}
+
+.social-icons svg {
+  width: 24px;
+  height: 24px;
+  vertical-align: middle;
+}
+
+.footer p {
+  font-size: 14px;
+  color: #666;
+}
+
+  
+  
+  
+  
