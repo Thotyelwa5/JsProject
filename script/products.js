@@ -1,10 +1,8 @@
 
-let featuredPosts = [];
-
-if (localStorage.getItem("featuredPosts")) {
-  featuredPosts = JSON.parse(localStorage.getItem("featuredPosts"));
-} else {
-  featuredPosts = [
+let products = JSON.parse(localStorage.getItem("product-list")) ? 
+JSON.parse(localStorage.getItem("product-list")) : 
+localStorage.setItem('product-list', JSON.stringify(
+  [
     {
       id: "7",
       title: "Cap",
@@ -77,15 +75,12 @@ if (localStorage.getItem("featuredPosts")) {
       content: " ",
       date: new Date(),
     },
-  ];
-
-  localStorage.setItem("featuredPosts", JSON.stringify(featuredPosts));
-}
-
+  ]
+))
 let cardContainer = document.getElementById("cardContainer");
-
-for (let i = 0; i < featuredPosts.length; i++) {
-  let post = featuredPosts[i];
+let cart = []
+products.forEach( (product)=>{
+  let post = product;
   let card = document.createElement("div");
   card.className = "card";
   let image = document.createElement("img");
@@ -97,11 +92,21 @@ for (let i = 0; i < featuredPosts.length; i++) {
   let addToCartButton = document.createElement("button");
   addToCartButton.textContent = "Add to Cart";
   addToCartButton.addEventListener("click", () => {
-    console.log(`Added post with ID ${post.id} to cart.`);
+    let selectedItem = {
+      id: product.id,
+      title: product.title,
+      imageUrl: product.imageUrl,
+      description: product.description,
+      content: product.content,
+      date: product.date,
+    }
+    cart.push(selectedItem)
+    localStorage.setItem('checkout', JSON.stringify(cart))
   });
   card.appendChild(addToCartButton);
   cardContainer.appendChild(card);
-}
+
+})
 function goToCheckoutPage() {
   window.location.href = "checkout.html";
 }

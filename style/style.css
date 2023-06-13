@@ -4,9 +4,11 @@
     height: 40rem;
     background-repeat: no-repeat;
 }
-.navbar:hover{
-  background-color: white;
+.navbar :hover{
+  color: white;
+  text-decoration: solid;
 }
+
 /* FeaturedPosts */
 .card {
     border: 1px solid #827d7d;
