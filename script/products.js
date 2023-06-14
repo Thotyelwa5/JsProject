@@ -1,6 +1,4 @@
 
-let products = JSON.parse(localStorage.getItem("product-list")) ? 
-JSON.parse(localStorage.getItem("product-list")) : 
 localStorage.setItem('product-list', JSON.stringify(
   [
     {
@@ -8,7 +6,7 @@ localStorage.setItem('product-list', JSON.stringify(
       title: "Cap",
       imageUrl: "https://i.postimg.cc/d1Z43DCN/hat-7.png",
       description: "R100",
-      content: " ",
+      content: "Available",
       date: new Date(),
     },
     {
@@ -16,7 +14,7 @@ localStorage.setItem('product-list', JSON.stringify(
       title: "Hat",
       imageUrl: "https://i.postimg.cc/0ytfC7dH/hat2.png",
       description: "R150",
-      content: " ",
+      content: "Available",
       date: new Date(),
     },
     {
@@ -24,7 +22,7 @@ localStorage.setItem('product-list', JSON.stringify(
       title: "Hat ",
       imageUrl: "https://i.postimg.cc/t4DrmKyk/hat4.png",
       description: "R175",
-      content: " ",
+      content: "Available",
       date: new Date(),
     },
     {
@@ -32,7 +30,7 @@ localStorage.setItem('product-list', JSON.stringify(
       title: "Hat",
       imageUrl: "https://i.postimg.cc/Xvzsn9ry/hat5.png",
       description: "R200",
-      content: " ",
+      content: "Available",
       date: new Date(),
     },
     {
@@ -40,7 +38,7 @@ localStorage.setItem('product-list', JSON.stringify(
       title: "Hat",
       imageUrl: "https://i.postimg.cc/L4fxMY2n/hat6.png",
       description: "R199,99",
-      content: " ",
+      content: "Available",
       date: new Date(),
     },
     {
@@ -48,7 +46,7 @@ localStorage.setItem('product-list', JSON.stringify(
       title: "Cap",
       imageUrl: "https://i.postimg.cc/Hs93VqJm/hats3.png",
       description: "R149,99",
-      content: " ",
+      content: "Available",
       date: new Date(),
     },
     {
@@ -56,7 +54,7 @@ localStorage.setItem('product-list', JSON.stringify(
       title: "Hat",
       imageUrl: "https://i.postimg.cc/Xvzsn9ry/hat5.png",
       description: "R200",
-      content: " ",
+      content: "Available",
       date: new Date(),
     },
     {
@@ -64,7 +62,7 @@ localStorage.setItem('product-list', JSON.stringify(
       title: "Hat",
       imageUrl: "https://i.postimg.cc/Xvzsn9ry/hat5.png",
       description: "R200",
-      content: " ",
+      content: "Available",
       date: new Date(),
     },
     {
@@ -72,13 +70,16 @@ localStorage.setItem('product-list', JSON.stringify(
       title: "Hat",
       imageUrl: "https://i.postimg.cc/Xvzsn9ry/hat5.png",
       description: "R200",
-      content: " ",
+      content: "Available",
       date: new Date(),
     },
   ]
 ))
+let products = JSON.parse(localStorage.getItem("product-list")) ? 
+JSON.parse(localStorage.getItem("product-list")) : []
 let cardContainer = document.getElementById("cardContainer");
 let cart = []
+localStorage.setItem('checkout-list', JSON.stringify( []))
 products.forEach( (product)=>{
   let post = product;
   let card = document.createElement("div");
@@ -86,11 +87,18 @@ products.forEach( (product)=>{
   let image = document.createElement("img");
   image.src = post.imageUrl;
   card.appendChild(image);
-  let price = document.createElement("p");
+  let title = document.createElement("h3")
+  title.innerHTML = post.title;
+  card.appendChild(title)
+  let price = document.createElement("h5");
   price.innerHTML = post.description;
   card.appendChild(price);
+  let content = document.createElement("p");
+  content.innerHTML = post.content;
+  card.appendChild(content);
   let addToCartButton = document.createElement("button");
   addToCartButton.textContent = "Add to Cart";
+  // debugger
   addToCartButton.addEventListener("click", () => {
     let selectedItem = {
       id: product.id,
@@ -101,7 +109,7 @@ products.forEach( (product)=>{
       date: product.date,
     }
     cart.push(selectedItem)
-    localStorage.setItem('checkout', JSON.stringify(cart))
+    localStorage.setItem('checkout-list', JSON.stringify(cart));
   });
   card.appendChild(addToCartButton);
   cardContainer.appendChild(card);
