@@ -1,12 +1,18 @@
 .landing{
-    background-image: url('https://i.postimg.cc/9XSrMmTv/background-img-js.png');
-    background-size: cover;
-    height: 40rem;
+    /* background-image: url('https://i.postimg.cc/9XSrMmTv/background-img-js.png'); */
+    /* background-size: cover; */
+    height: 90vh;
     background-repeat: no-repeat;
 }
 .navbar :hover{
   color: white;
   text-decoration: solid;
+}
+.carousel-item{
+  height: 35rem;
+}
+.carousel-item img{
+  height: 100%;
 }
 
 /* FeaturedPosts */
@@ -201,6 +207,43 @@ td{
   font-size: 14px;
   color: #666;
 }
+/* checkout table */
+.checkout-table {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.checkout-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.checkout-table th,
+.checkout-table td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.checkout-table th {
+  background-color: #f5f5f5;
+  font-weight: bold;
+}
+
+.checkout-table tfoot td {
+  font-weight: bold;
+}
+
+.checkout-table tfoot #total-description {
+  color: grey;
+}
+.card-col {
+  width: 200px; /* Adjust the width as needed */
+  height: 300px; /* Adjust the height as needed */
+  margin: 10px; /* Add margin as desired */
+}
+
+
 
   
   
