@@ -20,7 +20,7 @@ checkoutList.forEach((product) => {
   checkoutBody.appendChild(row);
 });
 
-totalDescription.textContent = `Total: $${totalPrice.toFixed(2)}`;
+totalDescription.textContent = `Total: R${totalPrice.toFixed(2)}`;
 
   displayContent();
 

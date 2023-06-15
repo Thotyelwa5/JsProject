@@ -1,21 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Anton', sans-serif;
+}
+
+nav ul li:hover {
+  background-color: rgba(255, 255, 255, 0.644);
+  color: black;
+  border-radius: 10px;
+}
+
 .landing{
     /* background-image: url('https://i.postimg.cc/9XSrMmTv/background-img-js.png'); */
     /* background-size: cover; */
-    height: 90vh;
+    height: 100vh;
     background-repeat: no-repeat;
 }
 .navbar :hover{
   color: white;
   text-decoration: solid;
 }
+
+.carousel {
+  height: 100%;
+}
 .carousel-item{
   height: 35rem;
 }
 .carousel-item img{
   height: 100%;
+  box-shadow: inset 120px 100px 250px #000000, inset -120px -100px 250px #000000;
+
+}
+
+#checkoutBtn {
+  display: flex;
+  justify-content: center;
 }
 
 /* FeaturedPosts */
+#feature-btn{
+  display: flex;
+  justify-content: center;
+}
+.features {
+  margin-top: 5%;
+}
 .card {
     border: 1px solid #827d7d;
     border-radius: 5px;
@@ -27,7 +59,7 @@
   .card img {
     width: 100%;
     height: auto;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
   }
   
   .card button {
@@ -130,38 +162,62 @@
 td{
     text-align: center;
 }
+#btnGo{
+  display: flex;
+  justify-content: end;
+  align-items: flex-end;
+  color: black;
+}
+#featured{
+  margin-top: -5rem;
+  padding-bottom: 4rem;
+}
 
 @media screen and (max-width: 600px) {
   #tbl-admin {
     width: 100%;
   }
 
-  #tbl-admin th,
+  #tbl-admin  th:nth-child(3),
+  #tbl-admin  td:nth-child(3),
+  #tbl-admin  th:nth-child(5),
+  #tbl-admin  td:nth-child(5){
+    
+      display: none;
+      width:calc(100% / 4)
+    }
+  
+    /* #admintb   th,
+    td {
+      width: calc(100% / 5);
+    } */
+
+  /* #tbl-admin th,
   #tbl-admin td,
   #tbl-admin tr,
   #tbl-admin tbody,
   #tbl-admin thead {
     display: block;
-  }
+  } */
 
-  #tbl-admin thead tr {
+  /* #tbl-admin thead tr {
     position: absolute;
     top: 100px;
     left: 100px;
-  }
+  } */
 
-  #tbl-admin tr {
+  /* #tbl-admin tr {
     border: 1px solid #ccc;
-  }
+  } */
 
-  #tbl-admin td {
+  /* #tbl-admin td {
     border: none;
     border-bottom: 1px solid #ddd;
     position: relative;
     padding-left: 50%;
-  }
+  } */
 
-  #tbl-admin td::before {
+  /* #tbl-admin td::before {
     position: absolute;
     top: 6px;
     left: 6px;
@@ -169,13 +225,35 @@ td{
     padding-right: 10px;
     white-space: nowrap;
     font-weight: bold;
-  }
+  } */
 
 
-  #tbl-admin td:last-child {
+  /* #tbl-admin td:last-child {
     display: none;
+  } */
+
+  #container{
+    margin-top: 7rem;
   }
 }
+
+@media screen and (max-width: 1024px) {
+  #container{
+    position: relative;
+    top: 4rem;
+  }
+}
+
+@media screen and (max-width: 310px) {
+  #cardContainer{
+    height: 170vh;
+  }
+
+  footer{
+    width: 100vw;
+  }
+}
+
 /* footer */
 .footer {
   background-color: #f8f8f8;
@@ -238,10 +316,11 @@ td{
   color: grey;
 }
 .card-col {
-  width: 200px; /* Adjust the width as needed */
-  height: 300px; /* Adjust the height as needed */
-  margin: 10px; /* Add margin as desired */
+  width: 200px; 
+  height: 300px; 
+  margin: 10px; 
 }
+
 
 
 

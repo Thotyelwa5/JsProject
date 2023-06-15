@@ -131,10 +131,10 @@ function editProduct(index){
 
   productData[index].id = document.querySelector("#id").value;
 
-  // document.getElementById("id").value = id;
-  // document.getElementById("description").value = description;   
-  // document.getElementById("title").value = title;   
-  // document.getElementById("content").value = content;  
+  document.getElementById("id").value = id;
+  document.getElementById("description").value = description;   
+  document.getElementById("title").value = title;   
+  document.getElementById("content").value = content;  
   localStorage.setItem('product-list', JSON.stringify(productData))
 displayProducts();
 
