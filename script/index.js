@@ -3,7 +3,7 @@ let featuredPosts = [
   {
     id: "1",
     title: "Unlock your inner cool with our must-have hat collection!",
-    imageUrl: "https://i.postimg.cc/d1Z43DCN/hat-7.png ",
+    imageUrl: "https://i.postimg.cc/mDxZRypt/hats.png ",
     description: "R100",
     content: "Available",
     date: new Date(),
@@ -11,15 +11,15 @@ let featuredPosts = [
   {
     id: "2",
     title: "Hats that make a statement: Fashion meets functionality!",
-    imageUrl: "https://i.postimg.cc/0ytfC7dH/hat2.png",
+    imageUrl: "https://i.postimg.cc/8z5zb5rP/357138-1966-XXL.jpg",
     description: "R150",
     content: "Available",
     date: new Date(),
   },
   {
     id: "3",
-    title: "Top off your style with our trend-setting hats!",
-    imageUrl: "https://i.postimg.cc/t4DrmKyk/hat4.png ",
+    title: "Top off your style with our trend-setting hats.Discover the ultimate accessory to elevate your fashion game: our stunning hats.",
+    imageUrl: "https://i.postimg.cc/J4fTthvF/maxresdefault.jpg",
     description: "R175",
     content: "Available",
     date: new Date(),
@@ -30,7 +30,7 @@ let featuredPosts = [
 for (let i = 0; i < featuredPosts.length; i++) {
   let post = featuredPosts[i];
   let col = document.createElement("div");
-  col.className = "col-2";
+  col.className = "col-sm-12 col-lg-2";
   let card = document.createElement("div");
   card.className = "card";
   let image = document.createElement("img");
